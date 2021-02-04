@@ -9,7 +9,7 @@
       </form>
 
       <div class="todo-list">
-        <todo v-for="t in todos" :key="t.id" :todo="t" @toggle ="toggleTodo" @remove = "removeTodo"/>
+        <todo class="todo" v-for="t in todos" :key="t.id" :todo="t" @toggle ="toggleTodo" @remove = "removeTodo"/>
       </div>
     </div>
   </div>
@@ -26,7 +26,9 @@ export default {
   methods: {
     addTodo(todo) {
       todo.id = Date.now();
-      this.todos.push(todo);
+      if(todo.description != undefined){
+        this.todos.push(todo);
+      }
       this.todo = {checked: false}
     },
     toggleTodo(todo){
@@ -41,7 +43,7 @@ export default {
     if(index > -1){
       this.$delete(this.todos, index);
     }
-    }
+    },
   },
 }
 </script>
@@ -54,6 +56,17 @@ export default {
 
   .todo-list{
     padding-top: 2rem;
+  }
+
+  .todo{
+    word-wrap: break-word;
+    margin: 5px ;
+  }
+  
+  #app{
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="tile flex-centered" :class="{checked: todo.checked}">
+  <div class="tile flex-centered bg-gray" :class="{checked: todo.checked}">
      <div class="tile-action">
          <button @click="$emit('remove', todo)" class="btn btn-link">
              <span class="text-error">
@@ -33,5 +33,9 @@ export default {
     .checked{
         text-decoration: line-through;
         color: lightgray;
+    }
+
+    .tile{
+        border-radius: 10px;
     }
 </style>
