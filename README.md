@@ -1,10 +1,10 @@
-# Lista de afazeres/To do list
+# :memo: Lista de afazeres/To do list :memo:
 
 Uma lista feita com as tecnologias HTML/CSS e JavaScript! Utilizado também dois frameworks, Vue.js e Spectre.css.
 
-### Funções
+### :wrench: Funções :wrench:
 
-É possível adicionar, remover e ~~marcar~~ suas tarefas de um jeito prático.
+É possível adicionar, remover e marcar suas tarefas de um jeito prático.
 
 
 
@@ -13,7 +13,7 @@ Uma lista feita com as tecnologias HTML/CSS e JavaScript! Utilizado também dois
 
 ![Alt Text](https://media.giphy.com/media/Gk3hvpqONauNO307JW/source.gif)
 
-# * ***NEW*** *
+# :collision: ***NEW*** :collision:
 ### Dark Mode
  
  Primeira versão do famoso Dark Mode adicionada.
