@@ -1,15 +1,21 @@
 <template>
-  <div id="app">
-    <div class="container grid-xs py-2"><img src="@/assets/to-do-logo.png" alt="to-do logo" class="img-responsive to-do-logo">
+  <div id="app" :class="'bg-'+theme">
+    <div class="form-group float-right">
+        <label class="form-switch" @change="switchTheme(theme)">
+          <input type="checkbox">
+          <i class="form-icon"></i> Dark Mode
+        </label>
+      </div>
+    <div class="container grid-xs py-2"><img src="@/assets/todo-dark.png" alt="to-do logo" class="img-responsive todo-dark">
       <form @submit.prevent="addTodo(todo)">
         <div class="input-group">
-          <input v-model="todo.description" class="form-input" type="text" id="input-to-do" placeholder="Ensira a tarefa">
-          <button class="btn btn-primary input-group-btn">Enviar</button>
+          <input v-model="todo.description" class="form-input" :class="'bg-'+theme" type="text" id="input-to-do" placeholder="Ensira a tarefa">
+          <button class="btn btn-primary input-group-btn" :class="'bg-'+ buttonTheme">Enviar</button>
         </div>
       </form>
 
       <div class="todo-list">
-        <todo class="todo" v-for="t in todos" :key="t.id" :todo="t" @toggle ="toggleTodo" @remove = "removeTodo"/>
+        <todo class="todo" v-for="t in todos" :key="t.id" :todo="t" :textTheme="textTheme" :tilesTheme="tilesTheme" @toggle ="toggleTodo" @remove = "removeTodo"/>
       </div>
     </div>
   </div>
@@ -21,7 +27,7 @@ export default {
   name: 'App',
   components: { todo: Todo },
   data(){
-    return{todos:[], todo:{checked: false}}
+    return{todos:[], todo:{checked: false}, theme:'light', textTheme:'dark', tilesTheme:'gray', buttonTheme:'dark'}
   },
   methods: {
     addTodo(todo) {
@@ -44,6 +50,20 @@ export default {
       this.$delete(this.todos, index);
     }
     },
+    switchTheme(){
+      if(this.theme === 'light'){
+        this.theme = 'dark';
+        this.textTheme = 'light';
+        this.tilesTheme = 'primary';
+        this.buttonTheme = 'primary';
+      }else{
+        this.theme = 'light';
+        this.textTheme = 'dark';
+        this.tilesTheme = 'gray';
+        this.buttonTheme = 'dark';
+      }
+      console.log('sim')
+    }
   },
 }
 </script>
