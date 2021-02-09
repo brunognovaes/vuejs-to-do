@@ -13,7 +13,6 @@ Uma lista feita com as tecnologias HTML/CSS e JavaScript! Utilizado também dois
 
 ![Alt Text](https://media.giphy.com/media/Gk3hvpqONauNO307JW/source.gif)
 
-# :collision: ***NEW*** :collision:
 ### Dark Mode
  
  Primeira versão do famoso Dark Mode adicionada.
