@@ -1,5 +1,5 @@
 <template>
-<div class="abTile" :class="'bg-'+tilesTheme">
+<div class="abTile" :class="darkTheme?'bg-primary':'bg-gray'">
   <div class="tile flex-centered" >
      <div class="tile-action">
          <button @click="$emit('remove', todo)" class="btn btn-link">
@@ -11,10 +11,10 @@
          </button>
      </div>
     <div class="tile-content" :class="{checked: todo.checked}" >
-        <div class="tile-subtitle" :class="'text-'+ textTheme"> {{ todo.description }}</div>
+        <div class="tile-subtitle" :class="darkTheme?'text-light':'text-dark'"> {{ todo.description }}</div>
     </div>
     <div class="tile-action">
-        <button @click="$emit('toggle', todo)" class="btn btn-link" :class="'text-'+ textTheme">
+        <button @click="$emit('toggle', todo)" class="btn btn-link" :class="darkTheme?'text-light':'text-dark'">
             <span v-if="todo.checked">Desmarcar</span>
             <span v-else>Concluído</span>
        </button>
@@ -27,8 +27,7 @@
 export default {
     props: {
          todo: {type: Object, required: true},
-         textTheme: {type: String, required: true},
-         tilesTheme: {type: String, required: true}
+         darkTheme: {type: Boolean, required: true}
     },
 }
 </script>
@@ -40,5 +39,9 @@ export default {
 
     .abTile{
         border-radius: 10px;
+    }
+
+    .btn :focus{
+        box-shadow: none;
     }
 </style>
