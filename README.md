@@ -15,6 +15,6 @@ Uma lista feita com as tecnologias HTML/CSS e JavaScript! Utilizado também dois
 
 ### Dark Mode
  
- Primeira versão do famoso Dark Mode adicionada.
+ Dark Mode adicionado.
 
 ![Alt Text](https://media.giphy.com/media/DKuFl6K3N4Zm5cCldf/source.gif)
